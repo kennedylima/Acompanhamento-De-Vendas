@@ -1,0 +1,35 @@
+<ion-view title="Venda Semanal" >
+
+  <ion-content >
+    <md-content >
+
+      <md-input-container  layout="row"  layout-align="start start" layout-fill  layout-wrap flex>
+          <md-icon  flex-order="1" md-svg-src='./img/predio_36px.svg'></md-icon>
+          <md-select flex-order="2" flex-gt-lg="100" flex-lg="94.5" flex-gt-md="90" flex-md="85" flex-gt-sm="80" flex-sm="75"
+                     ng-model="empresaSelecionada" placeholder="Selecione uma Empresa" ng-change="obterGrafico(empresaSelecionada)" >
+            <md-option  ng-repeat="empresa in listaDeEmpresa" value="{{empresa.id}}" >{{empresa.nome}}</md-option>
+          </md-select>
+
+          <div flex="2" flex-order="3" >
+            <md-button class="md-icon-button"  flex-order="1" ng-click="graficoEmLinha()">
+              <md-icon md-svg-src= "./img/grafico_linha_preto_36px.svg" aria-label="Linha"></md-icon>
+            </md-button>
+
+            <md-button class="md-icon-button"  flex-order="2" ng-click="graficoEmBarra()" >
+              <md-icon md-svg-src= "./img/grafico_barra_preto_36px.svg" aria-label="Barra"></md-icon>
+            </md-button>
+          </div>
+      </md-input-container>
+    </md-content>
+
+    <div class="card" ng-show="data" style="margin-top: -4px">
+      <div ng-show="linha">
+        <canvas id="linha" class="chart chart-line"  chart-data="data" chart-labels="labels" ></canvas>
+      </div>
+      <div ng-show="barra">
+        <canvas id="barra" class="chart chart-bar"  chart-data="data" chart-labels="labels" ></canvas>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
