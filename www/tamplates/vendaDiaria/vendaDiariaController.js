@@ -6,6 +6,10 @@ angular.module('app.vendaDiaria',['ionic','chart.js'])
                   [350400,300000,18080,15514,55141,12547]
                 ];
 
+    $scope.options={
+      tooltipTemplate: "<%= accounting.formatMoney(value, 'R$', 0)%>"
+    }
+
   });
 
 

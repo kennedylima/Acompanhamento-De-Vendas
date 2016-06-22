@@ -1,8 +1,6 @@
 angular.module('app.vendaSemanal',['ionic','chart.js','ngMaterial'])
   .controller('vendaSemanalController', function ($scope) {
 
-    $scope.titulo="Vendas da Semana";
-    
     $scope.listaDeEmpresa = [
                               {id:1, nome:'Petel CGR'},
                               {id:2, nome:'Petel CBA'},
@@ -10,11 +8,6 @@ angular.module('app.vendaSemanal',['ionic','chart.js','ngMaterial'])
                               {id:4, nome:'Petel SGO'},
                               {id:5, nome:'Petel Treze'},
                               {id:6, nome:'Pedis'}
-                            ];
-
-    $scope.listaDeTipoDeGrafico = [
-                              {id:1, nome:'Linha'},
-                              {id:2, nome:'Barra'}
                             ];
 
     $scope.linha=true;
@@ -28,7 +21,6 @@ angular.module('app.vendaSemanal',['ionic','chart.js','ngMaterial'])
       $scope.linha=false;
       $scope.barra=true;
     }
-
 
     $scope.obterGrafico = function (empresaSelecionada) {
       $scope.labels = ["Segunda-Feira", " Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira ", "Sábado"];
@@ -51,7 +43,6 @@ angular.module('app.vendaSemanal',['ionic','chart.js','ngMaterial'])
           [2847, 77451, 95478, 31265, 272203, 4574]
         ];
 
-        $scope.options
       }else if(empresaSelecionada == 5){
         $scope.data = [
           [514, 5412, 4478, 555412, 84878, 63215]
@@ -62,8 +53,12 @@ angular.module('app.vendaSemanal',['ionic','chart.js','ngMaterial'])
         ];
       }
 
+      $scope.options={
+        tooltipTemplate: "<%= accounting.formatMoney(value, 'R$', 0)%>"
+      }
 
-    }
+    };
+
 
   });
 

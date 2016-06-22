@@ -1,0 +1,29 @@
+
+<ion-view title="Venda Mensal" >
+
+  <ion-content >
+    <md-content  >
+      <md-input-container  layout="row"  layout-align="start start" layout-fill  layout-wrap flex>
+        <div flex="2" flex-order="3" >
+          <md-button class="md-icon-button"  flex-order="1" ng-click="graficoEmPizza()">
+            <md-icon md-svg-src= "./img/grafico_pizza_preto_36px.svg" aria-label="Linha"></md-icon>
+          </md-button>
+
+          <md-button class="md-icon-button"  flex-order="2" ng-click="graficoEmBarra()" >
+            <md-icon md-svg-src= "./img/grafico_barra_preto_36px.svg" aria-label="Barra"></md-icon>
+          </md-button>
+        </div>
+      </md-input-container>
+    </md-content>
+
+    <div class="card" ng-show="data" style="margin-top: -4px">
+      <div ng-show="pizza">
+        <canvas id="pizza" class="chart chart-pie" chart-options="options" chart-data="data" chart-labels="labels" ></canvas>
+      </div>
+      <div ng-show="barra">
+        <canvas id="barra" class="chart chart-bar" chart-options="options"  chart-data="data" chart-labels="labels" ></canvas>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
