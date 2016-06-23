@@ -21,13 +21,8 @@
       </md-input-container>
     </md-content>
 
-    <div class="card" ng-show="data" style="margin-top: -4px">
-      <div ng-show="linha">
-        <canvas id="linha" class="chart chart-line" chart-options="options"  chart-data="data" chart-labels="labels" ></canvas>
-      </div>
-      <div ng-show="barra">
-        <canvas id="barra" class="chart chart-bar"  chart-options="options"   chart-data="data" chart-labels="labels" ></canvas>
-      </div>
+    <div>
+      <canvas id="graficoSemanal"></canvas>
     </div>
 
   </ion-content>

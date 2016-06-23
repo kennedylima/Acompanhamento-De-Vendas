@@ -64,12 +64,11 @@ var appAcompanhamentoDeVendas = angular.module('app', [ 'ionic','chart.js','ngAr
     }
 
     $scope.titulo="Acompanhamento de Vendas";
+
     $scope.alterarTitulo = function (titulo) {
       $scope.titulo = titulo;
 
     }
-
-
 
   });
   /*.controller("ExampleController", function($scope) {

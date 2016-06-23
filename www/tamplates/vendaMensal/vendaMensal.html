@@ -16,14 +16,10 @@
       </md-input-container>
     </md-content>
 
-    <div class="card" ng-show="data" style="margin-top: -4px">
-      <div ng-show="pizza">
-        <canvas id="pizza" class="chart chart-pie" chart-options="options" chart-data="data" chart-labels="labels" ></canvas>
-      </div>
-      <div ng-show="barra">
-        <canvas id="barra" class="chart chart-bar" chart-options="options"  chart-data="data" chart-labels="labels" ></canvas>
-      </div>
+    <div>
+      <canvas id="graficoMensal"></canvas>
     </div>
+
 
   </ion-content>
 </ion-view>
